@@ -74,7 +74,7 @@ public class CopyUtils {
             if (!field.isAccessible() && !Modifier.isStatic(field.getModifiers()) && Modifier.isPrivate(field.getModifiers())) {
                 field.setAccessible(true);
                 field.set(newInstance, deepCopy(field.get(obj), visited));
-                field.setAccessible(false); // Reset the accessibility to its original state
+                field.setAccessible(false);
             } else {
                 field.set(newInstance, deepCopy(field.get(obj), visited));
             }
